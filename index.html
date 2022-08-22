@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+/* CSS */
+
+    html, body {
+        color: white !important;
+        font-family: sans-serif;
+    }
+
+    h2 {
+        letter-spacing: 2px;
+    }
+
+    .navbar-nav li {
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin: 2px;
+    }
+    .navbar-nav li:hover {
+        background-color: #46a1e8;
+        color: #46a1e8 !important;
+    }
+    .navbar-toggler:focus{
+        box-shadow: none !important;
+    }
+
+    .btn-info {
+        box-shadow: none !important;
+        border-color: black !important;
+    }
+
+    .btn-info:hover {
+        background-color: transparent !important;
+        color: white !important;
+        border-color: white !important;
+    }
+    .navbar-brand{
+        transition: transform .4s;
+    }
+    .navbar-brand:hover {
+        transform: scale(0.9);
+    }
+    .navbar-toggler:hover {
+        background-color: #46a1e8;
+        transition: background-color 0.4s;
+    }
+
+    li, a {
+        list-style: none;
+        text-decoration: none !important;
+        color: white !important;
+    }
+
+    li {
+        margin: 20px 0;   
+    }
+
+    .position-fixed a {
+        transition: color 0.2s;
+    }
+
+    .position-fixed a:hover {
+        color:#46a1e8 !important;
+    }
+
+    i {
+        font-size: 18px; 
+    }
+
+    .project-image {
+        opacity: 0.3;
+        transition: opacity 0.3s;
+    }
+
+    .project-image:hover {
+        opacity: 0.9;
+    }
+
+    .project-list li{
+        padding: 0 10px;
+        font-size: 13px;
+    }
+
+    .work i {
+        font-size: 23px;
+        padding: 0 10px;
+        transition: color 0.2s;
+    }
+
+    .work i:hover {
+        color: #46a1e8;
+    }
+
+    .skills .bi {
+        color: #46a1e8;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .box {
+        padding: 30px;
+        margin: 8px;
+        height: auto;
+        background-color:#052039;
+        transition: transform 0.3s;
+        max-width: 80%;
+        position: relative;
+        min-height: 350px;
+        min-width: 250px;
+    }
+
+    .box:hover {
+        transform: translate(0, -5px)
+    }
+
+    .archive p:hover {
+        text-decoration: underline;
+    }
+
+    .box h2 {
+        font-size: 20px;
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .box p {
+        font-size: 15px; 
+        font-weight: 300; 
+        opacity: 0.7;
+    }
+
+    .box i {
+        font-size: 30px;
+    }
+
+    .box ul {
+        padding-left: 0;
+    }
+
+    .box .bi-box-arrow-up-right:hover {
+        color: #46a1e8;
+    }
+
+    .other-skillset li { 
+        padding: 0 5px; 
+        font-weight: 100; 
+        font-size: 13px;
+    }
+
+    .other-skillset {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .text-template {
+        letter-spacing: 2px; 
+        font-family: 'Share Tech' !important; 
+        color: #46a1e8;
+    }
+
+    .btn-template {
+        color: #46a1e8 !important;
+        font-family: 'Share Tech';
+        letter-spacing: 2px;
+        border: 1px solid #46a1e8;
+        transition: background-color 0.3s;
+        padding: 15px 30px;
+    }
+
+    .btn-template:hover{
+        background-color: #46a2e84b;
+    }
+
+    .about-me a {
+        color: #46a1e8 !important;
+    }
+
+    .about-me a:hover {
+        text-decoration: underline !important;
+    }
+
+    @media screen and (max-width: 760px) {
+        .project-details {
+            left: 0 !important;
+        }
+    }
+
+</style>
+
+<body style="background-color: #031525;">
+<!-- Main section -->
+<section class="hero container align-items-center d-flex vh-100" id="hero">
+    <!-- Shrinking Bootstrap Navbar -->
+    <header id="navbar" class="fixed-top px-5 py-2" style="background-color: #052039; transition: top 0.5s; opacity: 0.9;">
+        <nav class="navbar navbar-dark navbar-expand-md position-sticky">
+            <a href="#hero" class="navbar-brand bg-image hover-zoom"><img src="logo.png" alt="project-logo" width="48" height="45">
+            </a>
+            <button class="navbar-toggler" 
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-lable="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-center" style="font-family: 'Share Tech';">
+                    <li><a class="nav-link text-light" href="#main">1. About</a></li>
+                    <li><a class="nav-link text-light" href="#work">2. Work</a></li>
+                    <li><a class="nav-link text-light" href="#contacts">3. Contacts</a></li>
+                    <li><a class="nav-link text-light" href="resume.pdf" target="_blank" rel="noopener noreferrer" style="border: 1px solid white;"> Resume </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero text -->
+    <div class="hero-text p-5">
+        <p class="text-template"> Hi! My name is </p>
+        <h2 class="display-2">Elene Bibilashvili</h1>
+        <h2 class="display-3" style="opacity: 0.5;">I'm a Frontend developer</h2>
+        <p>I build web pages and applications using frontend tools and libraries</p>
+        <a 
+            class="btn btn-template px-md-5 py-md-3 mt-3" 
+            href="#main" 
+            style="margin-top: 10px;"> 
+            Learn more 
+        </a>
+    </div>
+
+    <!-- Fixed profile links -->
+    <div class="row position-fixed d-none d-lg-flex p-5" style="left: 0px; bottom: -170px; padding: 40px !important; z-index: 999;">
+        <ul>
+            <li><a href="https://github.com/bibi-elene" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/bibi-elene/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/bb.elene/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/ekki.ros" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a></li>
+            <div class="d-flex mx-2" style="height: 200px;">
+                <div class="vr"></div>
+        </ul>
+    </div>
+    </div>
+    <div class="row position-fixed d-none d-lg-flex p-5" style="right: -50px; bottom: -150px;">
+        <a href="mailto: bibi.elene21@gmail.com"><i class="bi bi-envelope"></i></a>
+        <div class="d-flex" style="height: 200px;">
+            <div class="vr mx-2" ></div>
+          </div>
+    </div>
+</section> 
+<!-- About section -->
+<section class="about container p-5 justify-content-center" id="main">
+    <div class="row text-center justify-content-center">
+    <h2 style="font-size: 1.8em;"> 1. About me </h1>
+    <hr style="width: 200px;"/>
+        </div>
+    <div class="row justify-content-center py-4">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="px-4 about-me" style="opacity: 0.7; font-size: 17px; font-weight: 100; "> 
+            <p>Hi! My name is Elene, I'm a self taught junior with a passion for coding, currently working on my skill improvement. </p> 
+            <p>I always found coding to be interesting and exciting but I never had the courage to actually take the first steps, until the start of pandemic when I finally got enough time to learn a new skill. </p> 
+            <p>I started with courses on <a href="https://udemy.com" target="_blank" rel="noopener noreferrer">Udemy.com</a>, learnt the basics and upgraded the skills on <a href="https://freecodecamp.org" target="_blank" rel="noopener noreferrer">Freecodecamp.org</a>. Later I completed the <a href="https://www.facebook.com/groups/3969683209738650" target="_blank" rel="noopener noreferrer">Coding Bootcamp </a> and a Maths for Programming course by <a href="https://www.epam.com/" target="_blank" rel="noopener noreferrer">Epam</a></p> 
+            <p>During the last 2 years I've learnt how to build responsive websites, interacted with JavaScript Algorithms and Data Structures and finally after getting confident with JS <a href="#work">started building projects </a> using React.</p>
+            <p>Here are some skills that I've used to build my projects:</p>
+        </div>
+        <ul class="skills pt-4" style="opacity: 0.5; font-size: 12px;">
+            <div class="row">
+            <li class="col-6"><i class="bi bi-caret-right"></i> HTML</li>
+            <li class="col-6"><i class="bi bi-caret-right"></i> CSS</li>
+        </div>
+        <div class="row">
+            <li class="col-6"><i class="bi bi-caret-right"></i> JavaScript</li>
+            <li class="col-6"><i class="bi bi-caret-right"></i> React.js</li>
+        </div>
+        <div class="row">
+            <li class="col-6"><i class="bi bi-caret-right"></i> Bootstrap</li>
+            <li class="col-6"><i class="bi bi-caret-right"></i> Github</li>
+        </div>
+        </ul>
+        </div>
+    
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center">
+        <a href="#"><img src="programmer.jpeg" class="rounded text-center justify-content-center" alt="profile-pic" width="80%" style="max-width: 500px"></a>
+
+        </div>
+        </div>
+    </section>
+    <!-- Experience section (a feature project)-->
+    <section class="work container p-5" id="work">
+        <div class="row text-center justify-content-center">
+            <h2 class="text-light" style="font-size: 1.8em;"> 2. Some things I've built </h1>
+            <hr style="width: 400px;"/>
+        </div>
+
+        <div class="row img-div position-relative">            
+           <a href="https://bibi-elene.github.io/countries_api/" target="_blank" rel="noopener noreferrer" class="img-fluid project-image col-sm-12 col-md-6 my-4">
+            <img class="img-fluid" src="rest-api.jpg" alt="project-pic" width="100%" height="auto">
+           </a>
+           <div class="project-details row my-5 position-relative col-md-6 col-sm-12 d-block" style="left: -10%">
+            <p class="position-relative text-end text-template" style="z-index: -1; font-size: 18px;">Featured Project</p>
+            <h2 class="position-relative text-end" style="z-index: -1; font-size: 22px">REST Countries API</h2>
+            <div class="p-3 my-3 position-relative text-end rounded"  style="z-index: 1; width: auto; height: auto; font-size: 14px; font-weight: 300; background-color: #052039; ">
+                <p style="opacity: 0.8; z-index: -1;">In this project I used axios to fetch the data, some filter for the search/filter bar, states and React Routes. Dark/Light modes are available. Error cases are handled and the website is responsive. Providing the links to github repo and deploy below </p>        
+            </div>
+            <ul class="d-flex project-list position-relative justify-content-end" style="opacity: 0.8; font-weight: 300; z-index: -1; height: 5%;">
+                <li><p>React.js</p></li>
+                <li><p>CSS</p></li>
+                <li><p>API</p></li>
+                <li><p>Git</p></li>
+            </ul>
+            <ul class="d-flex position-relative justify-content-end">
+                <li><a href="https://github.com/bibi-elene/countries_api" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a></li>
+                <li><a href="https://bibi-elene.github.io/countries_api/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a></li>
+            </ul>
+        </div>
+
+         </div>
+    </section>
+    <!-- My Projects -->
+    <section class="container others">
+        <h2 class="text-center" style="font-size: 22px;">Other noteworthy projects </h2>
+        <a href="#" class="archive"><p class="text-center text-template">view the archive</p></a>
+        <div class="row">
+
+            <ul>
+                <div class="row justify-content-center">
+                    <li class="box col-md-3 rounded">
+                       <div class="d-flex justify-content-between">
+                        <i class="bi bi-folder"></i>                        
+                        <a href="https://codepen.io/ekki-ros/pen/zYRQYMN" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                    </div> 
+                        <h2>Random Number Tracker</h2>
+                        <p>A simple game using a little JavaScript and HTML, tracking the changes and taking action on certain amount of changes</p>
+                        <ul class="d-flex other-skillset">
+                            <li><span>JavaScript</span></li>
+                            <li><span>HTML</span></li>
+                            <li><span>CSS</span></li>
+                        </ul>
+                    </li>
+                    <li class="box col-md-3 rounded">
+                        <div class="d-flex justify-content-between">
+                        <i class="bi bi-folder"></i>                        
+                        <a href="https://codepen.io/ekki-ros/pen/ZEvKmpr" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                        <h2>Markdown Previewer</h2>
+                        <p>Markdown previewer where you can add formatting like headers, bold, bulleted lists, and so on to a plain text and see it on a preview.</p>
+                        <ul class="d-flex other-skillset">
+                            <li><span>React</span></li>
+                            <li><span>CSS</span></li>
+                        </ul>
+                    </li>
+                    <li class="box col-md-3 rounded">
+                        <div class="d-flex justify-content-between">
+                        <i class="bi bi-folder"></i>                        
+                        <a href="https://codepen.io/ekki-ros/pen/WNdrOMx" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                        <h2>Random Quote Machine</h2>
+                        <p>You will be able to get a random quote from a Quote API that was fetched with JavaScript</p>
+                        <ul class="d-flex other-skillset">
+                            <li><span>React</span></li>
+                            <li><span>CSS</span></li>
+                        </ul>
+                    </li>
+
+                    <li class="box col-md-3 rounded">
+                        <div class="d-flex justify-content-between">
+                        <i class="bi bi-folder"></i>                        
+                        <a href="https://codepen.io/ekki-ros/details/XWKZYwX" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                     </div> 
+                         <h2>Calculator</h2>
+                         <p>Calculator built by plain JavaScript</p>
+                         <ul class="d-flex other-skillset">
+                             <li><span>JavaScript</span></li>
+                             <li><span>HTML</span></li>
+                             <li><span>CSS</span></li>
+                         </ul>
+                     </li>
+                     <li class="box col-md-3 rounded">
+                         <div class="d-flex justify-content-between">
+                         <i class="bi bi-folder"></i>                        
+                         <a href="https://codepen.io/ekki-ros/pen/YzWYbwZ" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                             </div>
+                         <h2>Clock</h2>
+                         <p> Clock built by plain JavaScript </p>
+                         <ul class="d-flex other-skillset">
+                             <li><span>JavaScript</span></li>
+                             <li><span>HTML</span></li>
+                             <li><span>CSS</span></li>
+                         </ul>
+                     </li>
+                     <li class="box col-md-3 rounded">
+                         <div class="d-flex justify-content-between">
+                         <i class="bi bi-folder"></i>                        
+                         <a href="https://codepen.io/ekki-ros/pen/wvWKvry" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                             </div>
+                         <h2>Stopwatch</h2>
+                         <p>Stopwatch built by plain JavaScript</p>
+                         <ul class="d-flex other-skillset">
+                             <li><span>JavaScript</span></li>
+                             <li><span>HTML</span></li>
+                             <li><span>CSS</span></li>
+                         </ul>
+                     </li>
+                     <!-- Show more Projects (collapse)-->
+                    <div class="collapse" id="more-projects">
+                        <div class="row justify-content-center">
+                            <li class="box col-md-3 rounded">
+                                <div class="d-flex justify-content-between">
+                                <i class="bi bi-folder"></i>                        
+                                <a href="https://codepen.io/ekki-ros/pen/rNLVmbP" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                <h2>LBS to KG</h2>
+                                <p>simple app converting pounds to kilograms</p>
+                                <ul class="d-flex other-skillset">
+                                    <li><span>JavaScript</span></li>
+                                    <li><span>HTML</span></li>
+                                    <li><span>CSS</span></li>
+                                </ul>
+                            </li>
+                            <li class="box col-md-3 rounded">
+                                <div class="d-flex justify-content-between">
+                                <i class="bi bi-folder"></i>                        
+                                <a href="https://codepen.io/ekki-ros/pen/jOqRZGq" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                <h2>ToDo App</h2>
+                                <p> My very first app built by JavaScript (you've seen this before, I know)</p>
+                                <ul class="d-flex other-skillset">
+                                    <li><span>JavaScript</span></li>
+                                    <li><span>HTML</span></li>
+                                    <li><span>CSS</span></li>
+                                </ul>
+                            </li>
+                            <li class="box col-md-3 rounded">
+                                <div class="d-flex justify-content-between">
+                                <i class="bi bi-folder"></i>                        
+                                <a href="https://codepen.io/ekki-ros/details/abJXMZX" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                <h2>Random Color Generator</h2>
+                                <p>Generating random colors by picking random numbers and letters from the array</p>
+                                <ul class="d-flex other-skillset">
+                                    <li><span>JavaScript</span></li>
+                                    <li><span>HTML</span></li>
+                                    <li><span>CSS</span></li>
+                                </ul>
+                            </li>
+                        </div>
+                    </div>
+                     <!-- Show more button -->
+                     <li class="show-more col-12  text-center">
+                        <button 
+                        onClick="showLess()"
+                        id="btn-show"
+                        class="btn btn-template" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#more-projects" 
+                        aria-expanded="false" 
+                        aria-control="more-projects"
+                        style="padding: 15px 25px; margin-top: 10px; font-size: 15px;"
+                        >
+                        Show More
+                        </button>
+                    </li>
+                     </ul>
+                </div>
+                
+    </section>
+    <!-- Contacts -->
+    <section class="container contacts" id="contacts" style="margin-top: 10%; height: 60vh;">
+        <div class="text-center">
+            <p class="text-template">3. What's next?</p>
+            <h2 class="display-5">Get in touch</h2>
+            <p style="font-weight: 100; opacity: 0.6; line-height: 25px; padding: 15px; font-size: 18px;">I'm currently in search of new experiences and opportunities, <br /> preferably a junior position/internship. <br /> Feel free to reach out on the email link provided below: </p>
+            <a href="mailto: bibi.elene21@gmail.com" class="btn btn-template">
+            Say Hello 
+            <i class="bi bi-emoji-smile" style="font-size: 20px"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- Hide the navbar on scroll, Show More/Show Less Button -->
+    <script>
+        let prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                } else {
+                    document.getElementById("navbar").style.top = "-100px";
+                }
+                prevScrollpos = currentScrollPos;
+            }
+
+        let showBtn = document.getElementById('btn-show');
+        let state = true;
+
+        const showLess = () => {
+            if (state) {
+                showBtn.innerHTML = 'Show Less';
+                state = !state
+            } else {
+                showBtn.innerHTML = 'Show More';
+                state = !state
+            }
+        }   
+    </script>
+
+</body>
+</html>
